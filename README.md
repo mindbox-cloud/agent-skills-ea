@@ -1,7 +1,7 @@
 # agent-skills-ea
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Plugins](https://img.shields.io/badge/plugins-0-blue)](#available-plugins)
+[![Plugins](https://img.shields.io/badge/plugins-1-blue)](#available-plugins)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-plugin-orange)](https://claude.ai/code)
 
 Early Access channel of the Claude Code plugins by [mindbox.cloud](https://mindbox.cloud/?locale=en_US). New skills and new versions land here before they reach the main marketplace, [agent-skills](https://github.com/mindbox-cloud/agent-skills).
@@ -14,6 +14,7 @@ Early Access channel of the Claude Code plugins by [mindbox.cloud](https://mindb
 
 | Plugin | Description | Skill | Install |
 |--------|-------------|-------|---------|
+| [mindbox](./plugins/mindbox/) | Build marketing scenarios, audience filters and emails in a Mindbox project from plain-language requests: flow-create designs and fills a scenario, filter-build builds a platform-confirmed filter, filter-explain reads one back in business terms, email writes an email layout and email-ops previews it, saves it into a campaign and edits the campaign. Nothing is launched or sent to customers, and no filter is saved as a segment. | `mindbox:email`, `mindbox:email-ops`, `mindbox:filter-build`, `mindbox:filter-explain`, `mindbox:flow-create` | see below |
 
 ---
 
