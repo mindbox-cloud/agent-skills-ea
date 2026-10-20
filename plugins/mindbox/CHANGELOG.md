@@ -40,3 +40,10 @@ Install either this marketplace or the main one, not both: both ship a plugin na
 codex plugin marketplace add mindbox-cloud/agent-skills-ea
 codex plugin add mindbox@mindbox-cloud-plugins-ea
 ```
+
+## 1.1.0
+
+- **`/mindbox:analytics`** — new: answers questions about a project's figures from its
+  analytics data — a metric, why it changed, how a campaign or a flow performed, a summary
+  of a period. Answers follow fixed rules, end with the matching report in the admin menu,
+  and give no benchmark without a named source.
