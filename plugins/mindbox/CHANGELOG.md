@@ -47,3 +47,10 @@ codex plugin add mindbox@mindbox-cloud-plugins-ea
   analytics data — a metric, why it changed, how a campaign or a flow performed, a summary
   of a period. Answers follow fixed rules, end with the matching report in the admin menu,
   and give no benchmark without a named source.
+
+## 1.2.0
+
+- **`/mindbox:whypromo`** — new: explains in plain language why a promotion did not apply to an
+  order, gave no benefit or gave less than expected. Takes the explanation link from the admin panel
+  or a promotion link with an order number, names one reason and who to go to, and gives the detailed
+  version on request. Read-only; it never shows the customer's promo code.
