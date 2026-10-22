@@ -7,12 +7,13 @@ the response fields mean — [MCP_CONTRACT.md](MCP_CONTRACT.md).
 
 ## The server and the project
 
-There is one connected Mindbox MCP server: the server of the client's project. The plugin declares no MCP
+There is one connected Mindbox MCP server, and this conversation is about one project. The plugin declares no MCP
 servers of its own. If the `loyalty_*` tools are not visible, the MCP connection is not set up or has
 dropped: say that the promotion diagnostics service could not be reached and suggest reconnecting the server
 (`/mcp` in Claude Code).
 
-The project is the `tenant` argument of every call: the project's system name in Latin letters, taken from
+A client connection serves one project and the tools have no `tenant` argument. Where the schema does have one,
+it is the project's system name in Latin letters, taken from
 the subdomain of the admin-panel link. The server normalizes case itself; any other deviation in spelling is
 rejected. The optional `reason` argument is free text — "why this call"; it does not affect the response.
 

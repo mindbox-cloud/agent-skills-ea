@@ -17,7 +17,7 @@ project's system name ([GATEWAY.md § tenants_list](GATEWAY.md#tenants_list)).
 
 ## `loyalty_find_order_calculations` — the order's calculations
 
-Input: `tenant` and **exactly one** of the two order ids — `orderExternalId` (string, surrounding whitespace
+Input: **exactly one** of the two order ids, plus `tenant` where the schema has it — `orderExternalId` (string, surrounding whitespace
 is trimmed) or `orderInternalId` (**integer**, not a quoted string: a value of the wrong type is rejected by
 schema validation before it reaches the service).
 
@@ -43,7 +43,7 @@ is not visible from the response.
 
 ## `loyalty_explain_promotions` — what happened to the promotions
 
-Input: `tenant`, `calculationId` (a string holding a UUID) and `promotionIds[]` — an array of **strings**,
+Input: `calculationId` (a string holding a UUID) and `promotionIds[]` — an array of **strings**,
 at most 25: a promotion number (`"40434911"`) or the raw id of an external discount that the calculation
 did not match to a promotion (`"someshop-528"`). An unquoted number is rejected by schema validation. An
 empty array, or an empty string in it, yields `BAD_REQUEST`; duplicates are collapsed. The tool never returns
@@ -209,7 +209,7 @@ covers the kinds that have no text yet. The record about lines taken by an exclu
 lines) is looked up under the key `LinesExcludedByMatrix`. Three-part keys with `criterionName` exist only
 for traces older than 2026-09-03: `code_criterionName_failureKind` → `code_criterionName` → `code_failureKind` → `code`.
 
-**Language.** The catalog text comes in English (`locale: en-US`). Answer the user in their language,
+**Language.** The catalog text comes in the language the server chose for the connection — `locale` says which. Answer the user in their language,
 staying close to the catalog text and adding no facts.
 
 **Macros.** `${ CustomerSegment }`, `${ PointOfContactSegment }`, `${ AreaSegment }`, `${ ProductSegment }`,

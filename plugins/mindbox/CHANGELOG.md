@@ -54,3 +54,9 @@ codex plugin add mindbox@mindbox-cloud-plugins-ea
   order, gave no benefit or gave less than expected. Takes the explanation link from the admin panel
   or a promotion link with an order number, names one reason and who to go to, and gives the detailed
   version on request. Read-only; it never shows the customer's promo code.
+
+## 1.2.1
+
+- **`/mindbox:analytics`** — the report link is now built from the project's admin address.
+- **`/mindbox:whypromo`** — works over the client connection: no project name in tool calls
+  unless a tool asks for one.
