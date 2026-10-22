@@ -6,7 +6,7 @@ One end-to-end pass: what the user wrote, what came back from the tools, what th
 
 > `https://demo-shop.mindbox.ru/promotions/40124947 8813322`
 
-A promotion link and an order number. The project `demo-shop` and the promotion `40124947` come from the link; the order `8813322` is next to it. `tenant` is `demo-shop`.
+A promotion link and an order number. The project `demo-shop` and the promotion `40124947` come from the link; the order `8813322` is next to it. `tenant`, where the schema has it, is `demo-shop`.
 
 `loyalty_find_order_calculations` with `orderExternalId: "8813322"` answers `FOUND`: one order, with one
 history entry carrying a `calculationId`. Nothing to choose from, so no questions to the user; go straight to
@@ -76,7 +76,7 @@ means the promotion passed selection. Still no codes and no stages.
   currency (rubles for Russian projects), not in minor units.
 - "The limit is exhausted": the response has `limitsDataUnavailable: false` and no record about exhaustion;
   that is a different reason, and it was not here.
-- Answering with the English `explanation` phrase as is when the user asked in Russian: answer in the user's
+- Answering with the `explanation` phrase as is (for example, in English when the user asked in Russian): answer in the user's
   language.
 - "The promotion is active now, so the dates are not the problem": `state` is about today, not about the purchase.
 - Retelling all fourteen candidates: the question was about one promotion.

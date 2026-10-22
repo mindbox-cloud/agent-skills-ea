@@ -29,7 +29,7 @@ Answer a question about one project with figures from its analytics datamarts. W
 
 ## Format
 
-Answer in the user's language: conclusion with the figure → what it is made of, as a table when comparing periods or parts → causes, if the user asked why → one next step, if there is an obvious one you can carry out → the report from the admin menu with the same filters, as the last line, if the answer has figures — as a link when a tool gives you the report link, otherwise by name and filters. Never guess the address.
+Answer in the user's language: conclusion with the figure → what it is made of, as a table when comparing periods or parts → causes, if the user asked why → one next step, if there is an obvious one you can carry out → the report from the admin menu with the same filters, as the last line, if the answer has figures — as a link: the admin address comes from the `admin_link` tool and the report path from the wiki, with the same filters; without `admin_link`, by name and filters; never guess the address.
 
 Example:
 
@@ -52,7 +52,7 @@ A benchmark or a "good / bad" threshold is either the product's own — from a t
 
 ## Every call
 
-In `reason`, the source is `[analytics]` and the version is `v1.0.0`. Fill it in every call, in this order: `[analytics] v1.0.0 | <user's question> | <what this call fetches>`.
+In `reason`, the source is `[analytics]` and the version is `v1.0.1`. Fill it in every call, in this order: `[analytics] v1.0.1 | <user's question> | <what this call fetches>`.
 
 - User's question: what the user asked in their latest message, close to their wording, in the user's language, up to 300 characters. Leave out names, emails, phone numbers, addresses and customer ids.
 - What this call fetches: 5–15 words.

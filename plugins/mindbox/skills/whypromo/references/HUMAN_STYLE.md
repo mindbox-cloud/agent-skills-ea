@@ -65,7 +65,8 @@ The wording of the reason comes from `explanation`, that is, from the reason-cod
 the promotion diagnostics service, not from you; where it lives and how to search it:
 [MCP_CONTRACT.md § The wording of the reason — the catalog](MCP_CONTRACT.md#the-wording-of-the-reason--the-catalog).
 
-**Translation.** The catalog text is English. Answer in the user's language, translating close
+**Translation.** The catalog text comes in the language the server chose for the connection, which may already
+be the user's. Answer in the user's language, rewording close
 to the text; add no facts; replace the technical catalog terms per the dictionary:
 
 | Catalog term | Plain wording | Plain wording in Russian |

@@ -67,7 +67,8 @@ like `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`) or an **order number** by which the
 | **Promotion link**: `…mindbox.ru/promotions/<number>` plus a value next to it | subdomain | the segment after `/promotions/` | a GUID is the calculation, otherwise the order number |
 | **Values in order** | system name in Latin letters | a number like `40124947` | a GUID or an order number |
 
-The project from the link is the `tenant`. The `https://` scheme, the order of query parameters and extra ones do not
+The project from the link is the project the connected server works with; where a tool's schema has a `tenant`
+argument, this is its value. The `https://` scheme, the order of query parameters and extra ones do not
 matter; in a promotion link everything after the number (`/`, `?`, `#`) is dropped. A GUID in the input always means
 `calculationId` — the order search is then skipped.
 
@@ -85,9 +86,11 @@ matter; in a promotion link everything after the number (`/`, `?`, `#`) is dropp
 
 ## The server and the project
 
-There is one connected Mindbox MCP server; every call takes `tenant` — the project's system name from the subdomain
-of the admin-panel link. If the connected server offers `tenants_list`, use it once to confirm the project's system
-name; otherwise ask the user for it. A project-not-available or access-denied message means the project name is wrong
+There is one connected Mindbox MCP server, and this conversation is about one project. A client connection fixes
+the project itself, and the tools have no `tenant` argument; where the schema does have one, pass the project's
+system name from the subdomain of the admin-panel link. If the connected server offers `tenants_list`, use it once
+to confirm the project's system name; otherwise take the name from the link, and ask the user only when the schema
+has `tenant` and the input gives no project. A project-not-available or access-denied message means the project name is wrong
 or this MCP connection has no access to the project — check the spelling against the admin-panel link; if it is right,
 Mindbox support. Details — [GATEWAY.md § The server and the project](references/GATEWAY.md#the-server-and-the-project).
 
@@ -109,7 +112,8 @@ Mindbox support. Details — [GATEWAY.md § The server and the project](referenc
    the project's time zone (Moscow time for Russian projects), the `isCurrent: true` one marked "latest", and the total
    if there are more. Sample: "The order was recalculated 3 times: 12 Sep 14:02, 12 Sep 18:40, 13 Sep 10:15 (latest).
    Which one do we look at?". No calculation ids in the question.
-5. `loyalty_explain_promotions` with `tenant`, `calculationId` and the promotion number. Any status other than
+5. `loyalty_explain_promotions` with `calculationId` and the promotion number (plus `tenant` where the schema
+   asks for it). Any status other than
    `EXPLAINED`, or "An error occurred…" — see [special cases](#special-cases).
 6. On `EXPLAINED` read: `verdict` → `reason` with its `explanation` → `details` and `promotion` (promotion
    name) → `inputs` to confirm.
@@ -241,7 +245,7 @@ Facts:
 
 Wording:
 
-- the wording is a translation of the catalog text per the `HUMAN_STYLE.md` dictionary, not the English original
+- the wording is a translation of the catalog text per the `HUMAN_STYLE.md` dictionary, not the catalog text
   verbatim; any link keeps its original title and address;
 - the text has no codes, stages, calculation ids or the words "trace", "snapshot", "verdict";
 - the text has no promo code and no coupon internal id — a prohibition without exceptions.
