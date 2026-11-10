@@ -11,7 +11,7 @@ description: >-
   Don't use when: the request is to build or change a flow, a mailing or a filter — those have their
   own skills; the user needs a list of customers rather than a figure.
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Analytics

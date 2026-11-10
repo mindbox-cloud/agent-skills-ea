@@ -9,21 +9,7 @@ to `context` without replacing their wording.
 
 **Return:** to the "Skill feedback via MCP feedback" section in `SKILL.md`.
 
-The format is the same everywhere:
-
-```text
-[skill-feedback:v1]
-skill=<email|email-ops>
-skillVersion=<metadata.version of that skill's SKILL.md>
-source=user-report|agent-observation
-problem=<the gist: what blocks the work, what went wrong>
-context=<inputs and requests, how the situation came about, verbatim backend errors>
-area=<layout|save|preview|gallery|personalization|other>
-```
-
-`area` is optional — add it only if the area is obvious. There is no separate field
-for "reproduced/not reproduced": the fact of reproduction is part of
-`context` (run date, one-off campaign, inputs).
+The format is item 1 of the protocol in `SKILL.md`.
 
 ## Example 1. user-report: the layout fell apart during migration
 
@@ -58,7 +44,7 @@ skill=email-ops
 skillVersion=1.2.0
 source=agent-observation
 problem=visual_template_save can store the visual template but not attach it to the campaign; from the response it is easy to take this for success.
-context=One-off campaign in a test project, run 2026-09-02. A save with a stale mailingRowVersion returned ChangeConflict with the verbatim text «The template itself WAS stored — only the campaign was not». A repeated campaign_get showed: the template grew to rowVersion=3, while the body attached to the email stayed at rowVersion=2. The subagent meanwhile reported "saved".
+context=One-off campaign in a test project, run 2026-09-02. A save with the campaign's stale `rowVersion` returned ChangeConflict with the verbatim text «The template itself WAS stored — only the campaign was not». A repeated campaign_get showed: the template grew to rowVersion=3, while the body attached to the email stayed at rowVersion=2. The subagent meanwhile reported "saved".
 area=save
 ```
 

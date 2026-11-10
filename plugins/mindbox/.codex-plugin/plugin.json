@@ -4,12 +4,12 @@
   "author": {
     "name": "mindbox.cloud"
   },
-  "version": "1.2.1",
+  "version": "1.3.0",
   "skills": "./skills/",
   "interface": {
     "displayName": "Mindbox (Early Access)",
     "shortDescription": "Build scenarios, audience filters and emails, answer questions about figures and explain promotions in a Mindbox project",
-    "longDescription": "Describe a campaign in plain language and the skills do the platform work: design and fill a scenario, build an audience filter the platform confirms, read an existing filter back in business terms, write an email layout, preview it and save it into a campaign, answer a question about the project's figures from its analytics data, or explain in plain language why a promotion did not apply to an order. Needs an MCP connection to the Mindbox project you work in. Nothing is launched and nothing is sent to customers.",
+    "longDescription": "Describe a campaign in plain language and the skills do the platform work: design and fill a scenario, build an audience filter the platform confirms, read an existing filter back in business terms, write an email layout, preview it and save it into a campaign, answer a question about the project's figures from its analytics data, or explain in plain language why a promotion did not apply to an order. Needs the Mindbox MCP server (https://mcp.mindbox.ru), the same address for everyone; you choose the project when you sign in. Nothing is launched and nothing is sent to customers.",
     "developerName": "Mindbox",
     "category": "Productivity",
     "capabilities": [
