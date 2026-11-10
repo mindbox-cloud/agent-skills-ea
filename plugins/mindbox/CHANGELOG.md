@@ -60,3 +60,34 @@ codex plugin add mindbox@mindbox-cloud-plugins-ea
 - **`/mindbox:analytics`** — the report link is now built from the project's admin address.
 - **`/mindbox:whypromo`** — works over the client connection: no project name in tool calls
   unless a tool asks for one.
+
+## 1.3.0
+
+Emails catch up with the main marketplace.
+
+- **`/mindbox:email`**
+  - Reads each element's attributes, defaults and allowed values from the editor's reference
+    served by the `wiki` tool, instead of a copy bundled with the skill. When the reference
+    cannot be read, it stops rather than guesses.
+  - Builds an email from a saved template.
+  - Takes a block from the editor's library and changes its settings; a block shared between
+    emails is inserted as is, without editing its content.
+  - Shows a block or a row only to a segment of customers.
+  - Uses the project's custom fonts, keeps the segments and fonts of an email it edits, and
+    changes shared styles field by field.
+  - Lays out an email from a mockup by the role and position of each element, and asks which
+    width to take when the mockup's differs from the email's.
+  - Adds an unsubscribe link to every new email, except a transactional one or one whose
+    wrapper or campaign settings carry the link.
+- **`/mindbox:email-ops`**
+  - Creates, edits and copies saved templates.
+  - Shows a preview after every change, and before sending, a short list of what the campaign
+    still needs.
+  - Takes the parameter names for reading, previewing and saving an email from the tools
+    themselves, so it keeps working as the project's MCP server updates its email tools.
+
+Emails now also need the `wiki` tool of the project's MCP server.
+
+Setup: the Mindbox MCP server has one address for everyone, https://mcp.mindbox.ru. Add it as a
+custom connector and choose the project when you sign in — there is no separate server per
+project anymore.

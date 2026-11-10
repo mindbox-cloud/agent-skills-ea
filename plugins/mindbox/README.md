@@ -7,7 +7,7 @@
 
 Build marketing scenarios, audience filters and emails in a Mindbox project from
 plain-language requests, answer questions about the project's figures, and explain why a
-promotion did not apply to an order. Connect the MCP server for the project you want to work with.
+promotion did not apply to an order. Connect the Mindbox MCP server at https://mcp.mindbox.ru; you choose the project when you sign in.
 
 | Skill | Input | Result |
 |---|---|---|
@@ -26,12 +26,13 @@ project, so the two are used together.
 
 ## Requirements
 
-An MCP connection to the project. Scenarios need the flow tools, the wiki tool and the
+An MCP connection to Mindbox. Scenarios need the flow tools, the wiki tool and the
 entity listing; filters need the filter tools; emails need the campaign, visual template
-and gallery tools; analytics needs the analytics tools (the schema and the query tool)
+and gallery tools and the wiki tool; analytics needs the analytics tools (the schema and the query tool)
 and the wiki tool; the promotion explanation needs the loyalty tools
-(`loyalty_find_order_calculations`, `loyalty_explain_promotions`, `loyalty_reason_codes`). The plugin ships no `.mcp.json`: the server
-and the access depend on the project and authorize the user.
+(`loyalty_find_order_calculations`, `loyalty_explain_promotions`, `loyalty_reason_codes`). The plugin ships no `.mcp.json`: add the Mindbox MCP
+server as a custom connector at https://mcp.mindbox.ru. The address is the same for everyone;
+access to a specific project is granted when you sign in.
 
 ## Boundaries
 
